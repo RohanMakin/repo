@@ -1,0 +1,52 @@
+Company: NatWest Group (Royal Bank Of Scotland)
+Designation: Software Engineer, Duration: 1.5 years (September 2021 - Present)
+
+Project: Customer Decision Engine (Data Engineer)
+Working on scoping and development of changes in DDL or Python jobs.
+End-To-End process of sourcing files landing at AWS S3 to data ingestion into hive tables.
+Scheduling and triggering of the PySpark jobs using the Airflow.
+Preparing the sample data-set with parquet files at AWS S3 for testing in lower environments.
+Verifying the data in AWS Athena using hive queries such as high level count distributions.
+Analysing the data in MS Excel by creating swapset of the required columns using pivot tables.
+Commiting of the proposed code logic changes in Bitbucket using Git.
+Reviewing of the code for the pull request created in Bitbucket.
+Submitting a PySpark job with different parameters in AWS EMR.
+Monitoring of Schedulers, Static DAG and Dynamic DAG in Airflow.
+Generation of different set of test case scenarios and UAT report document.
+Investigating and fixing the issue with duplicate CINS in the Equifax bureau data.
+Creation of governance documents (MCR/Test Approach) required for implementation.
+UAT Testing in preprod environment against test cases involved for each change.
+Inspecting the errors and execution logs in Airflow and EMR for job failures.
+Performing post-implementation technical checkout of the changes in production.
+Business validation checks of the changes implemented in production via hive queries.
+Interaction with business stakeholders for understanding the change requirements and present back.
+
+AWS S3 Cost Optimization: 
+Analysis on the data backup process and making changes on the scheduling.
+Automating the clean up on the folders in S3 to free up space.
+Reducing more than 50% of S3 data and keeping the banks costs down.
+Changing the S3 life cycle policy to reduce the retention period on s3 bucket.
+
+Data Sanitisation Utility (Automation):
+Writing PySpark code to remove secret, PII, client data and customer card information.
+Reducing the volume of candidate production data to be sanitised based on the filter condition.
+Expunging columns that are not required and replacing data by a compatible value via Spark SQL.
+Used CRC32 algorithm to generate random value and casting the result to original data type.
+
+Project: Experian Delphi for Customer Management (PySpark Developer)
+Worked in the scoping, development, testing and release phases of the project.
+Detailed field level comparison in MS Excel of the Experain DCM file version layouts.
+Impact analysis on the existing and new design approach of the data ingestion process in AWS.
+Investigation of the columns which are Added/Renamed/Removed/Replaced with fillers.
+Making all the necessary changes in Python jobs, scripts, tables, and views.
+Modification of the Airflow DAG to include new task instances in the flow.
+Establishing different component links to create the DAG workflows.
+Writing a UDF module in Python which can be called to get the value of latest partition of table.
+Created Python script for sourcing dependency check to get load refresh status of the source table.
+Used PySpark for reading Experian data from CDL(Common Data Lake) based on latest partition.
+Adding extra derived columns in data using batch information and inserting records in hive table.
+Handling of the Blank/Null Values with Default Values for the new columns using Spark SQL.
+Validation of duplicate records in feed file before ingestion into Athena tables.
+Creating SOE (Sequence Of Events) for the execution of adhoc tasks in production environment.
+
+
