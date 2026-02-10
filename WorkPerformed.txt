@@ -1,0 +1,157 @@
+Worked on POC - Table Schema Comparison Utility using glue python which automatically extract table layout detail from different databases/environment and compare them and public the report.
+
+File Permission Abends Reduction:
+When the fileperm.sh script runs it tries to change the permission for all the ingestion files under the directory.
+When a file is placed with some other user, job fails throwing the error permission denied. So the code needs to be tweaked in this script.
+Takes a lot of time to resolve the issue. Causes the delay in Successor jobs.
+New Process will change the permission of only those files which are owned by the user from which file_perm.sh script is running.
+
+Handling of duplicate column check in Slide jar:
+To handle the duplicate column check in the Slide jar. The code will throw an error exception if there is duplicate column coming in the metadata.xml file. 
+It will also show the number of duplicate columns present and also show the duplicate columns in the spark executor logs. 
+It would reduce the abend coming while ingestion to hive table due to the presence of the duplicate columns in the metadata.xml file. 
+This reduces the manual effort for checking the number of duplicate column present in the metadata.xml file.
+
+Worked on automation script to confirm National Identifiers are not in the EDL in AWS.
+sin validation 
+Sin masker utility
+
+Utility to Convert File Format from AVRO to ORC
+
+below CI of worth $63,026.00 Cost Savings.
+Implementing logging mechanism in ingestion
+reduced the total abends counts significantly.
+
+Worked on POC - creating Grafana dashboard by integrating CloudWatch Logs.
+
+Technical implementation for promotion of datafiles, marker files and metadata.xmls to production environment for various applications.
+Resolution of different job issues in prod and non-production environments for both onprem and aws.
+See the failure logs at S3 using the cluster-id and step-id.
+Worked on an automation script for removing the control-M characters from the files/callscripts.
+Building and Deploying the artifacts through DevOps - CI/CD pipelines using Jenkins, CDD Release and Ansible.
+Scheduling and Monitoring of Jobs in Zeke.
+
+Informatica PowerCenter ETL tool.
+
+Ignite 2020 DataHackathon for Challenge : Optimize Platform Cost.
+Worked on optimization of Glue jobs for Sorter with different number of DPU/workers.
+
+Performance tuning of Glue jobs
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+AWS Solutions Architect - Asscociate (Certified with 83.1%).
+Sunlife ASCI Gem Award for CI idea of Restartability of Ingestion failures worth C$63K Cost Savings.
+Completed course on Agile Fundamentals: Including Scrum and Kanban at Udemy.
+Certification of Acievement for CI idea of AWS Glue Jobs Optimization worth C$1.6K Cost Savings.
+Certification of Acievement for CI Idea on Jenkins CD Pipeline for deploying artifacts.
+Completed course on Spark and Hadoop Developer Certification - Scala at Udemy.
+
+
+Amazon Web Services: AWS EC2, S3, EMR, AWS Glue, CloudWatch, IAM, Athena, Networking - VPC, ELB, ASG, EBS, EFS, Route 53
+
+AWS CLI
+
+
+Company: SunLife Financial
+Designation: Analyst Development, Duration: 1.9 years (July 2019 - Present)
+
+Project: Data Analytics/Business Intelligence Services (AWS Developer)
+
+Transmission of the files to AWS EC2 from each data source(RDBMS, Mainframe) using Informatica PowerCenter.
+Modifying and executing Unix shell scripts for copying the data files from EC2 into S3 buckets.
+Validation and verification of the data at S3 using Spark based on technical rules.
+Securing the raw data before ingestion by masking the column values containing PII information.
+Applying business transformations on the validated data as required.
+Used TransferManager API for using Amazon S3 multipart uploads to copy contents to S3.
+Filtering the valid and invalid data from files and storing them in separate S3 folders.
+Storing the standardized files at S3 in different file formats (orc, avro, parquet).
+Inserting the data into hive tables (interanl/external) with partitioning using SQLContext.
+Handling of duplicate columns check in ingestion using distinct and diff menthods in Scala.
+Technical implementation for promotion of files to production environment for various applications.
+Resolution of different job failures in environments for both On-premise and AWS.
+Created Unix shell script for removing the control-M characters from files.
+Scheduling and monitoring of jobs in Zeke tool.
+Building and Deploying the artifacts through DevOps - CI/CD pipelines using Jenkins, CDD Release and Ansible.
+
+
+Performance tuning of AWS Glue Jobs:
+Used G.1X Worker type with Glue version 2 for all jobs.
+Prefiltering the data before performing heavy data operation.
+Used pushdown predicate when reading partitioned data from source.
+Used isEmpty() function in place of count() to check emptiness of a DataFrame.
+Tuned spark configuration (number of executors) for different set of datasets to achieve parallelism.
+Used native method to read database instead of using gluecontext API to avoid getting complex DAG.
+Used the collect() method rather than joining two large tables.
+Partitioning the data to optimize queries based on where clause.
+Identifying data granularity by checking duplicate rows for joining DataFrames.
+
+
+Table Schema Comparison Utility:
+Writing Glue script using Pyspark to compare the table structure between two databases.
+Connection to databases using AWS Glue connection string.
+Storing the system names(postgresql/redshift), databases, tables and target path in a parameter file.
+Reading the data from source tables and creating DataFrame from SparkSession.
+Joining of the Spark DataFrames on table names and column names.
+Filtering the data to get missing tables/columns in databases.
+Matching of the column datatypes for all common tables.
+Writing the DynamicFrame in csv file format.
+Saving the files into AWS S3 location using GlueContext.
+
+
+Data Masking Tool:
+Writing Spark code using Scala to mask the raw data containing National Identifier values.
+Reading/Uploading the files at S3 with S3Client object using S3ClientBuilder and AmazonS3URI class.
+Creating backup table and copying records to it from the original table using SQLContext.
+Loading the data records from the table into the DataFrame and it's schema in a StructType object.
+Extracting the datatype by filtering based on column name to be masked.
+Masking value of the column based on the datatype.
+Updating the column to the masked value using dataframe withColumn function.
+Writing the masked data to the table using Insert Overwrite command.
+
+
+SIN Validator Utility:
+Created a Unix script to confirm Social Insurance Number(SIN) are not in the EDL.
+Fetching the data from hive cluster using AWS EMR add-steps command.
+Traversing through hive tables mentioned in the hive.q file for distinct values of SIN columns.
+Generation of the output file and sending it in mail.
+
+
+Restartability of Ingestion failures:
+Added exception handing in script which reverts the changes made before ingestion job failure.
+Automated the manual steps(such as copy files to EC2 from S3, update properties files, rename datafiles).
+Implemented logging mechanism which gets the EMR logs from S3 using the cluster-id and step-id.
+
+
+File Format Converter:
+Writing Spark code using Scala to convert file format from AVRO to ORC.
+Created a DataFrame from AVRO hive table using SparkSession.
+Writing the DataFrame to target-location in ORC file format.
+Partitioning of data by date column and saving in Overwrite mode.
+Created a Unix script in EC2 which takes arguments as table-name, file-format and target-location.
+Backing up of the files at AVRO location using AWS S3 sync command.
+Calling the format-converter.jar by running the spark-submit command on EMR server.
+
+
+Grafana dashboard with AWS CloudWatch:
+Installed Grafana on the AWS EC2 instance.
+Creating an AWS IAM Policy using CloudWatch Metrics.
+Creating a Role for EC2 and attaching the Policy to it.
+Creating a user to attach the Grafana role to it.
+Attaching the IAM Role to the Grafana EC2 Instance.
+Adding the Data Sources as AWS CloudWatch in Grafana.
+Created Graphs for CloudWatch CPUUtilization and ExecutionTime.
+
+
+Ignite 2020 DataHackathon: AWS Glue Jobs Optimization
+Created a performance metrics to reduce CPU Utilization and job execution time of Glue jobs.
+Writing parameterized AWS Glue jobs which accepts table-names and job-name as parameters.
+Used Joins (Shuffle, Broadcast), Sorting and Aggregation on different Glue worker types.
+Used grouping feature before transformation.
+Configuring DPU to find the desired setting.
+Analyzing data by finding the appropriate key to write optimized queries. 
+Choosing the right partition key for joining, sorting and aggregating DataFrames.
+Broadcasting small dataset on each partition to reduce data shuffling in a join operation.
+Analyzing metrics of data movement, data shuffling, driver and executor utilization in CloudWatch.
+
+
