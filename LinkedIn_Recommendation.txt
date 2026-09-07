@@ -1,0 +1,9 @@
+LinkedIn_Recommendation
+
+I had the privilege of working closely with Rohan on multiple data engineering projects and was consistently impressed by his technical expertise. He brings deep hands-on experience with Apache Spark, Hadoop, Hive, AWS and programming languages like Scala, Java, and Python, along with strong proficiency in Unix and writing complex SQL queries to meet diverse analytical needs.
+
+Rohan designed scalable ETL pipelines, optimized distributed data processing jobs and orchestrated workflows using Airflow, consistently delivering high-quality solutions that enhanced our team's performance. Beyond his technical skills, he is a strategic thinker, proactive problem-solver and mentor who leads technical discussions and drives best practices.
+
+I highly recommend Rohan as an experienced Senior Data Engineer capable of tackling complex data challenges.
+
+
